@@ -1,6 +1,7 @@
 variable "zone" {
   description = "Cloudflare zone"
   type        = string
+  default     = "mcplay.biz"
 }
 
 variable "proxy_ips" {
