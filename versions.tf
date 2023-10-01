@@ -5,4 +5,12 @@ terraform {
       version = "~> 4.0"
     }
   }
+  
+  cloud {
+    organization = "alflag"
+
+    workspaces {
+      name = "dns"
+    }
+  }
 }
