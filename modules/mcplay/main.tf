@@ -25,19 +25,35 @@ resource "cloudflare_record" "tcpshield" {
 resource "cloudflare_record" "srv_mcproxy_1" {
   zone_id = data.cloudflare_zone.main.id
   name    = "_minecraft._tcp"
-  value   = "20 10 25565 tcpshield.mcplay.biz"
   type    = "SRV"
   ttl     = "60"
-  proxied = false
+
+  data {
+    service  = "_minecraft"
+    proto    = "_tcp"
+    name     = "mcplay.biz"
+    priority = 20
+    weight   = 10
+    port     = 25565
+    target   = "tcpshield.mcplay.biz"
+  }
 }
 
 resource "cloudflare_record" "srv_mcproxy_2" {
   zone_id = data.cloudflare_zone.main.id
   name    = "_minecraft._tcp"
-  value   = "10 10 25565 proxy.mcplay.biz"
   type    = "SRV"
   ttl     = "60"
-  proxied = false
+
+  data {
+    service  = "_minecraft"
+    proto    = "_tcp"
+    name     = "mcplay.biz"
+    priority = 10
+    weight   = 10
+    port     = 25565
+    target   = "proxy.mcplay.biz"
+  }
 }
 
 resource "cloudflare_record" "txt" {
