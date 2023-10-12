@@ -22,6 +22,24 @@ resource "cloudflare_record" "tcpshield" {
   proxied = false
 }
 
+resource "cloudflare_record" "srv_mcproxy_1" {
+  zone_id = data.cloudflare_zone.main.id
+  name    = "_minecraft._tcp"
+  value   = "20 10 25565 tcpshield.mcplay.biz"
+  type    = "SRV"
+  ttl     = "60"
+  proxied = false
+}
+
+resource "cloudflare_record" "srv_mcproxy_2" {
+  zone_id = data.cloudflare_zone.main.id
+  name    = "_minecraft._tcp"
+  value   = "10 10 25565 proxy.mcplay.biz"
+  type    = "SRV"
+  ttl     = "60"
+  proxied = false
+}
+
 resource "cloudflare_record" "txt" {
   zone_id = data.cloudflare_zone.main.id
   name    = "@"

@@ -24,6 +24,8 @@ No modules.
 | Name | Type |
 |------|------|
 | [cloudflare_record.proxy](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.srv_mcproxy_1](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.srv_mcproxy_2](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.tcpshield](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.txt](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_zone.main](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone) | data source |
