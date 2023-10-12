@@ -16,7 +16,7 @@ resource "cloudflare_record" "proxy" {
 resource "cloudflare_record" "tcpshield" {
   zone_id = data.cloudflare_zone.main.id
   name    = "tcpshield"
-  value   = "946b80aa2878512fac262127b8bbe144.ipv4.tcpshield.com"
+  value   = var.tcpshield
   type    = "CNAME"
   ttl     = "60"
   proxied = false
@@ -35,7 +35,7 @@ resource "cloudflare_record" "srv_mcproxy_1" {
     priority = 20
     weight   = 10
     port     = 25565
-    target   = "tcpshield.mcplay.biz"
+    target   = cloudflare_record.tcpshield.hostname
   }
 }
 
@@ -52,7 +52,7 @@ resource "cloudflare_record" "srv_mcproxy_2" {
     priority = 10
     weight   = 10
     port     = 25565
-    target   = "proxy.mcplay.biz"
+    target   = cloudflare_record.proxy.hostname
   }
 }
 
