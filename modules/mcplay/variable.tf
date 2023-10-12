@@ -12,3 +12,9 @@ variable "proxy_ips" {
     "138.2.4.127",
   ]
 }
+
+variable "tcpshield" {
+  description = "TCPShield backend CNAME"
+  type        = string
+  default     = "946b80aa2878512fac262127b8bbe144.ipv4.tcpshield.com"
+}

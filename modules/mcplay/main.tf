@@ -13,6 +13,15 @@ resource "cloudflare_record" "proxy" {
   proxied = false
 }
 
+resource "cloudflare_record" "tcpshield" {
+  zone_id = data.cloudflare_zone.main.id
+  name    = "tcpshield"
+  value   = "946b80aa2878512fac262127b8bbe144.ipv4.tcpshield.com"
+  type    = "CNAME"
+  ttl     = "60"
+  proxied = false
+}
+
 resource "cloudflare_record" "txt" {
   zone_id = data.cloudflare_zone.main.id
   name    = "@"
