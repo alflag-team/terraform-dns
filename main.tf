@@ -5,3 +5,7 @@ module "alflag" {
 module "mcplay" {
   source = "./modules/mcplay"
 }
+
+module "vlouty" {
+  source = "./modules/vlouty"
+}
