@@ -52,7 +52,7 @@ resource "cloudflare_record" "srv_mcproxy_2" {
     priority = 10
     weight   = 10
     port     = 25565
-    target   = cloudflare_record.proxy.hostname
+    target   = cloudflare_record.proxy[1].hostname
   }
 }
 
