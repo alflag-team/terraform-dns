@@ -56,9 +56,16 @@ resource "cloudflare_record" "srv_mcproxy_2" {
   }
 }
 
-resource "cloudflare_record" "txt" {
+resource "cloudflare_record" "txt_spf" {
   zone_id = data.cloudflare_zone.main.id
   name    = "@"
   value   = "v=spf1 include:_spf.mx.cloudflare.net ~all"
+  type    = "TXT"
+}
+
+resource "cloudflare_record" "txt_dmarc" {
+  zone_id = data.cloudflare_zone.main.id
+  name    = "_dmarc"
+  value   = "v=DMARC1; p=none; rua=mailto:${var.email}"
   type    = "TXT"
 }
