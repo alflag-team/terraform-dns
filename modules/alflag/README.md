@@ -24,14 +24,16 @@ No modules.
 | Name | Type |
 |------|------|
 | [cloudflare_record.issues](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
-| [cloudflare_record.txt](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.txt_dmarc](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
+| [cloudflare_record.txt_spf](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_zone.main](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_zone"></a> [zone](#input\_zone) | Cloudflare zone | `string` | n/a | yes |
+| <a name="input_email"></a> [email](#input\_email) | DMARC email | `string` | `"admin@alflag.org"` | no |
+| <a name="input_zone"></a> [zone](#input\_zone) | Cloudflare zone | `string` | `"alflag.org"` | no |
 
 ## Outputs
 
