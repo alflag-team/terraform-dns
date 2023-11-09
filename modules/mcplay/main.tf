@@ -39,22 +39,22 @@ resource "cloudflare_record" "srv_mcproxy_1" {
   }
 }
 
-resource "cloudflare_record" "srv_mcproxy_2" {
-  zone_id = data.cloudflare_zone.main.id
-  name    = "_minecraft._tcp"
-  type    = "SRV"
-  ttl     = "60"
+# resource "cloudflare_record" "srv_mcproxy_2" {
+#   zone_id = data.cloudflare_zone.main.id
+#   name    = "_minecraft._tcp"
+#   type    = "SRV"
+#   ttl     = "60"
 
-  data {
-    service  = "_minecraft"
-    proto    = "_tcp"
-    name     = "mcplay.biz"
-    priority = 10
-    weight   = 10
-    port     = 25565
-    target   = cloudflare_record.proxy[1].hostname
-  }
-}
+#   data {
+#     service  = "_minecraft"
+#     proto    = "_tcp"
+#     name     = "mcplay.biz"
+#     priority = 10
+#     weight   = 10
+#     port     = 25565
+#     target   = cloudflare_record.proxy[1].hostname
+#   }
+# }
 
 resource "cloudflare_record" "txt_spf" {
   zone_id = data.cloudflare_zone.main.id
