@@ -1,11 +1,11 @@
 module "alflag" {
-  source = "./modules/alflag"
+  source = "./zones/alflag"
 }
 
 module "mcplay" {
-  source = "./modules/mcplay"
+  source = "./zones/mcplay"
 }
 
 module "vlouty" {
-  source = "./modules/vlouty"
+  source = "./zones/vlouty"
 }

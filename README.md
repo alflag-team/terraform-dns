@@ -1,6 +1,6 @@
 # dns
 
-DNSに関するTerraformのコードを管理するリポジトリです。
+DNS に関する Terraform のコードを管理するリポジトリです。
 
 ## ディレクトリ構成
 
@@ -23,19 +23,19 @@ DNSに関するTerraformのコードを管理するリポジトリです。
 
 ## terraform ドキュメントの生成
 
-terraform-docsを使ってドキュメントを生成しています。
+terraform-docs を使ってドキュメントを生成しています。
 
 モジュールを作る場合、以下のファイルを作成する必要があります。
 
-- `modules/<module>/header.md`: ヘッダーに表示する情報
+- `zones/<zone>/header.md`: ヘッダーに表示する情報
 
 ```markdown
 # Title
 
-This module is ...
+This zone is ...
 ```
 
-- `modules/<module>/.terraform-docs.yml`: ドキュメントの設定ファイル
+- `zones/<zone>/.terraform-docs.yml`: ドキュメントの設定ファイル
 
 ```yaml
 formatter: markdown table
@@ -54,5 +54,5 @@ output:
 以下のコマンドでドキュメントを生成できます。
 
 ```bash
-terraform-docs modules/<module>/
+terraform-docs zones/<zone>/
 ```
