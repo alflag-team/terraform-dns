@@ -15,7 +15,7 @@ resource "cloudflare_record" "issues" {
 resource "cloudflare_record" "txt_spf" {
   zone_id         = data.cloudflare_zone.main.id
   name            = "@"
-  value           = "v=spf1 include:_spf.mx.cloudflare.net ~all"
+  value           = "v=spf1 include:_spf.elasticemail.com include:_spf.mx.cloudflare.net ~all"
   type            = "TXT"
   allow_overwrite = true
 }
