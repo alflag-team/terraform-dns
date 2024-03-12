@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# mcplay
+# mcplay.biz
 
-MCPlayNetwork の DNS レコードを管理するためのモジュールです。
+mcplay.biz の DNS レコードを管理するためのモジュールです。
 
 ## Requirements
 

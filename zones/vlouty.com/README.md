@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# vlouty
+# vlouty.com
 
-vlouty の DNS レコードを管理するためのモジュールです。
+vlouty.com の DNS レコードを管理するためのモジュールです。
 
 ## Requirements
 
