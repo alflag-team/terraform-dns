@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# alflag
+# alflag.org
 
-alflag の DNS レコードを管理するためのモジュールです。
+alflag.org の DNS レコードを管理するためのモジュールです。
 
 ## Requirements
 
