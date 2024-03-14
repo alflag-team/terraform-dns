@@ -13,7 +13,7 @@ resource "cloudflare_record" "txt_spf" {
 resource "cloudflare_record" "txt_dmarc" {
   zone_id = data.cloudflare_zone.main.id
   name    = "_dmarc"
-  value   = "v=DMARC1; p=quarantine; rua=mailto:14e67501080447ceb90a47e04b59eab1@dmarc-reports.cloudflare.net,mailto:${var.email}"
+  value   = "v=DMARC1; p=quarantine; rua=mailto:14e67501080447ceb90a47e04b59eab1@dmarc-reports.cloudflare.net"
   type    = "TXT"
 }
 
