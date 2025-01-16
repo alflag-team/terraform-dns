@@ -2,17 +2,6 @@ data "cloudflare_zone" "main" {
   name = var.zone
 }
 
-resource "cloudflare_record" "proxy" {
-  count = length(var.proxy_ips)
-
-  zone_id = data.cloudflare_zone.main.id
-  name    = "proxy"
-  content = var.proxy_ips[count.index]
-  type    = "A"
-  ttl     = "60"
-  proxied = false
-}
-
 resource "cloudflare_record" "tcpshield" {
   zone_id = data.cloudflare_zone.main.id
   name    = "tcpshield"
