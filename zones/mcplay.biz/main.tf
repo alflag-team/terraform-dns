@@ -17,9 +17,6 @@ resource "cloudflare_record" "_minecraft_tcp" {
   type    = "SRV"
 
   data {
-    service  = "_minecraft"
-    proto    = "_tcp"
-    name     = "mcplay.biz"
     priority = 100
     weight   = 100
     port     = 25565
