@@ -7,7 +7,7 @@ variable "zone" {
 variable "tcpshield" {
   description = "TCPShield backend CNAME"
   type        = string
-  default     = "946b80aa2878512fac262127b8bbe144.ipv4.tcpshield.com"
+  default     = "187f47ac9e331cf14b15afd04dec3c04.ipv4.tcpshield.com"
 }
 
 variable "email" {
