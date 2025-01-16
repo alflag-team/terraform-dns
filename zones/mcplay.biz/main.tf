@@ -11,6 +11,22 @@ resource "cloudflare_record" "alflag-prod-20240818" {
   proxied = false
 }
 
+resource "cloudflare_record" "_minecraft_tcp" {
+  zone_id = data.cloudflare_zone.main.id
+  name    = "_minecraft._tcp"
+  type    = "SRV"
+
+  data {
+    service  = "_minecraft"
+    proto    = "_tcp"
+    name     = "mcplay.biz"
+    priority = 100
+    weight   = 100
+    port     = 25565
+    target   = "tcpshield.mcplay.biz"
+  }
+}
+
 resource "cloudflare_record" "tcpshield" {
   zone_id = data.cloudflare_zone.main.id
   name    = "tcpshield"
