@@ -33,13 +33,17 @@ resource "cloudflare_record" "txt" {
   type    = "TXT"
 }
 
-resource "cloudflare_record" "cname" {
+resource "cloudflare_record" "cname_no_proxy" {
   for_each = {
-    name    = "alflag-prod-20240818._domainkey"
-    content = "alflag-prod-20240818.alflag.org.dkim.kix1.oracleemaildelivery.com"
+    dkim = {
+      name    = "alflag-prod-20240818._domainkey"
+      content = "alflag-prod-20240818.alflag.org.dkim.kix1.oracleemaildelivery.com"
+    }
   }
   zone_id = data.cloudflare_zone.main.id
   name    = each.value.name
   content = each.value.content
   type    = "CNAME"
+  ttl     = "60"
+  proxied = false
 }
