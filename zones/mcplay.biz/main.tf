@@ -18,32 +18,31 @@ resource "cloudflare_record" "_minecraft_tcp" {
 resource "cloudflare_record" "mx" {
   for_each = {
     aspmx0 = {
-      name     = "aspmx.l.google.com"
+      content  = "aspmx.l.google.com"
       priority = 1
     }
     aspmx1 = {
-      name     = "alt1.aspmx.l.google.com"
+      content  = "alt1.aspmx.l.google.com"
       priority = 5
     }
     aspmx2 = {
-      name     = "alt2.aspmx.l.google.com"
+      content  = "alt2.aspmx.l.google.com"
       priority = 5
     }
     aspmx3 = {
-      name     = "alt3.aspmx.l.google.com"
+      content  = "alt3.aspmx.l.google.com"
       priority = 10
     }
     aspmx4 = {
-      name     = "alt4.aspmx.l.google.com"
+      content  = "alt4.aspmx.l.google.com"
       priority = 10
     }
   }
   zone_id         = data.cloudflare_zone.main.id
   name            = "@"
-  content         = each.value.name
+  content         = each.value.content
   priority        = each.value.priority
   type            = "MX"
-  allow_overwrite = true
 }
 
 resource "cloudflare_record" "txt" {
