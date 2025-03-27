@@ -53,7 +53,7 @@ resource "cloudflare_record" "txt" {
     }
     dmarc = {
       name    = "_dmarc"
-      content = "v=DMARC1; p=quarantine; rua=mailto:2ae3cde55ccd42dd926deb9db0f2f995@dmarc-reports.cloudflare.net,mailto:${var.email}"
+      content = "v=DMARC1; p=quarantine; rua=mailto:2ae3cde55ccd42dd926deb9db0f2f995@dmarc-reports.cloudflare.net"
     }
   }
   zone_id = data.cloudflare_zone.main.id
