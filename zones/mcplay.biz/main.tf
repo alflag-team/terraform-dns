@@ -38,11 +38,11 @@ resource "cloudflare_record" "mx" {
       priority = 10
     }
   }
-  zone_id         = data.cloudflare_zone.main.id
-  name            = "@"
-  content         = each.value.content
-  priority        = each.value.priority
-  type            = "MX"
+  zone_id  = data.cloudflare_zone.main.id
+  name     = "@"
+  content  = each.value.content
+  priority = each.value.priority
+  type     = "MX"
 }
 
 resource "cloudflare_record" "txt" {

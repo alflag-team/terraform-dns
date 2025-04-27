@@ -1,0 +1,6 @@
+[tools]
+pre-commit = "3.8.0"
+terraform = "1.11.4"
+terraform-docs = "0.20.0"
+tflint = "0.56.0"
+trivy = "0.61.1"

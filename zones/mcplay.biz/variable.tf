@@ -9,9 +9,3 @@ variable "tcpshield" {
   type        = string
   default     = "187f47ac9e331cf14b15afd04dec3c04.ipv4.tcpshield.com"
 }
-
-variable "email" {
-  description = "DMARC email"
-  type        = string
-  default     = "admin@mcplay.biz"
-}
